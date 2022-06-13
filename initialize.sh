@@ -20,10 +20,10 @@ read GITHUB_A
 case $GITHUB_A in
     "" | [Yy]* )
 
-    echo -n "input your github username"
+    echo -n "input your github username: "
     read GITNAME
 
-    echo -n "input your github email"
+    echo -n "input your github email: "
     read GITEMAIL
 
     sudo apt install git -y
