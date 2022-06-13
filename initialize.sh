@@ -1,10 +1,7 @@
 sudo apt update
 sudo apt install vim zip unzip net-tools curl cmake build-essential -y
 
-GOARCHI=""
 GITHUB_A=""
-RUSTC_A=""
-GO_A=""
 AUTH_KEY_FILE="~/.ssh/authorized_keys"
 GITNAME=""
 GITEMAIL=""
@@ -43,27 +40,6 @@ EOS
 esac
 
 
-echo -n "do you want to get cargo(rustc)? [Y/n]"
-read RUSTC_A
-case $RUSTC_A in
-    "" | [Yy]* ) curl https://sh.rustup.rs -sSf | sh ;;
-    * ) echo "skipped installing cargo" ;;
-esac
-
-
-echo -n "do you want to get golang? [Y/n]"
-read GO_A
-case $GO_A in
-    "" | [Yy]* )
-    wget -P ~/ https://go.dev/dl/$GOARCHI
-    sudo tar -zxvf ~/$GOARCHI -C /usr/local/
-    rm -rf ~/$GOARCHI
-    sudo ln -s /usr/local/go/bin/go /usr/bin
-    ;;
-    * ) echo "skipped installing golang" ;;
-esac
-
-
 echo -n "do you want to use docker? [Y/n]"
 read DOCKER_A
 case $DOCKER_A in
@@ -74,4 +50,4 @@ case $DOCKER_A in
     * ) echo "skipped installing docker, docker-compose" ;;
 esac
 
-unset GOARCHI GITHUB_A RUSTC_A GO_A AUTH_KEY_FILE
+unset GOARCHI GITHUB_A AUTH_KEY_FILE
