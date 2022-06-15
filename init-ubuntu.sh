@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt install vim zip unzip net-tools curl cmake build-essential -y
+sudo apt install vim zip unzip net-tools network-manager curl cmake build-essential -y
 
 GITHUB_A=""
 AUTH_KEY_FILE="~/.ssh/authorized_keys"
