@@ -21,4 +21,9 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias ll='ls -ahlvF'
+
+cdll() {
+    \cd "$@" && ll
+}
+alias cd='cdll'
 alias cd..='cd ../'
