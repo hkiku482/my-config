@@ -1,7 +1,7 @@
 GOARCHI="go1.18.3.linux-amd64.tar.gz"
 
 sudo pacman -Syy
-sudo pacman -S vim zsh git wget openssh adobe-source-han-sans-jp-fonts noto-fonts-cjk
+sudo pacman -S vim zsh git wget openssh adobe-source-han-sans-jp-fonts noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im
 
 echo -n "do you want to set up github? [Y/n]"
 read GITHUB_A
@@ -49,17 +49,6 @@ esac
 
 case $GITHUB_A in
     "" | [Yy]* ) cat ~/.ssh/github.pub
-esac
-
-echo -n "do you want to remove this script? [Y/n]"
-read RMV
-case $RMV in
-    "" | [Yy]* )
-        if [ -e ./init.sh ]; then
-            rm ./init.sh
-        fi
-    ;;
-    * ) echo "skipped to remove this script" ;;
 esac
 
 mkdir -p ~/workspaces
