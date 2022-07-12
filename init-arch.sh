@@ -1,3 +1,5 @@
+GOARCHI="go1.18.3.linux-amd64.tar.gz"
+
 sudo pacman -Syy
 sudo pacman -S vim zsh git wget openssh adobe-source-han-sans-jp-fonts noto-fonts-cjk
 
@@ -37,7 +39,7 @@ echo -n "do you want to get golang? [Y/n]"
 read GO_A
 case $GO_A in
     "" | [Yy]* )
-    wget -P ~/ https://go.dev/dl/$GOARCHI
+    wget https://go.dev/dl/$GOARCHI -P ~/
     sudo tar -zxvf ~/$GOARCHI -C /usr/local/
     rm -rf ~/$GOARCHI
     sudo ln -s /usr/local/go/bin/go /usr/bin
@@ -60,8 +62,8 @@ case $RMV in
     * ) echo "skipped to remove this script" ;;
 esac
 
-mkdir ~/workspaces
-mkdir ~/Downloads/AUR
+mkdir -p ~/workspaces
+mkdir -p ~/Downloads/AUR
 
 cd ~/Downloads/AUR
 git clone https://aur.archlinux.org/google-chrome.git
@@ -71,5 +73,6 @@ cd ~/Downloads/AUR
 git clone https://aur.archlinux.org/visual-studio-code-bin.git
 cd visual-studio-code-bin
 makepkg -si
+cd
 
-unset GITNAME GITEMAIL SSHCONFIG VIMRC GITHUB_A RUSTC_A GO_A RMV
+unset GITHUB_A GITNAME GITEMAIL RUSTC_A GOARCHI RMV
