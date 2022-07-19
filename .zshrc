@@ -27,3 +27,7 @@ cdll() {
 }
 alias cd='cdll'
 alias cd..='cd ../'
+
+dc-run(){
+    docker-compose run --rm $1 bash -c "${@:2:($#-1}"
+}
