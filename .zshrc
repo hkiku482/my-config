@@ -31,5 +31,4 @@ alias cd..='cd ../'
 dc-run(){
     docker-compose run --rm $1 bash -c "${@:2:($#-1)}"
 }
-
-dcr=dc-run
+alias dcr=dc-run
