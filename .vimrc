@@ -9,6 +9,7 @@ set smartindent
 set showmatch
 set laststatus=2
 set wildmode=list:longest
+set clipboard=unnamedplus
 
 inoremap <c-d> <delete>
 inoremap <c-j> <down>
