@@ -54,14 +54,14 @@ esac
 mkdir -p ~/workspaces
 mkdir -p ~/Downloads/AUR
 
-cd ~/Downloads/AUR
-git clone https://aur.archlinux.org/google-chrome.git
-cd google-chrome
-makepkg -si
-cd ~/Downloads/AUR
-git clone https://aur.archlinux.org/visual-studio-code-bin.git
-cd visual-studio-code-bin
-makepkg -si
-cd
+# cd ~/Downloads/AUR
+# git clone https://aur.archlinux.org/google-chrome.git
+# cd google-chrome
+# makepkg -si
+# cd ~/Downloads/AUR
+# git clone https://aur.archlinux.org/visual-studio-code-bin.git
+# cd visual-studio-code-bin
+# makepkg -si
+# cd
 
-unset GITHUB_A GITNAME GITEMAIL RUSTC_A GOARCHI RMV
+unset GITHUB_A GITNAME GITEMAIL RUSTC_A GOARCHI
