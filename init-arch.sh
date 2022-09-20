@@ -51,8 +51,8 @@ case $GITHUB_A in
     "" | [Yy]* ) cat ~/.ssh/github.pub
 esac
 
-mkdir -p ~/workspaces
-mkdir -p ~/Downloads/AUR
+# mkdir -p ~/workspaces
+# mkdir -p ~/Downloads/AUR
 
 # cd ~/Downloads/AUR
 # git clone https://aur.archlinux.org/google-chrome.git
