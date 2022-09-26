@@ -16,7 +16,7 @@ useradd -m -s /bin/bash $USERNAME
 passwd $USERNAME
 unset USERNAME
 
-pacman -S intel-ucode grub efibootmgr pulseaudio pavucontrol netplan networkmanager sudo
+pacman -Syu intel-ucode grub efibootmgr pulseaudio pavucontrol netplan networkmanager sudo
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
