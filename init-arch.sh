@@ -59,7 +59,7 @@ case $GO_A in
 esac
 
 case $GITHUB_A in
-    "" | [Yy]* ) cat ~/.ssh/github.pub
+    "" | [Yy]* ) echo "##### GitHub Publick Key #####"; cat ~/.ssh/github.pub; echo "##############################"
 esac
 
 git clone https://github.com/powerline/fonts.git ./powerlinefonts
@@ -247,4 +247,3 @@ bindkey '\e\e[D' backward-word
 EOS
 
 chsh -s /bin/zsh
-
