@@ -3,7 +3,7 @@
 GOARCHI="go1.19.3.linux-amd64.tar.gz"
 
 sudo pacman -Syy
-sudo pacman -S vim zsh git ssh wget adobe-source-han-sans-jp-fonts noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im
+sudo pacman -S vim zsh git wget adobe-source-han-sans-jp-fonts noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im
 
 echo -n "do you want to set up github? [Y/n]"
 read GITHUB_A
