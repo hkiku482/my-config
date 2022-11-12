@@ -9,7 +9,7 @@ echo "QT_IM_MODULE=fcitx5" >> /etc/environment
 echo "XMODIFIERS=@im=fcitx5" >> /etc/environment
 echo "DefaultIMModule=fcitx5" >> /etc/environment
 
-echo -n "do you want to set up github? [Y/n]"
+echo -n "do you use github? [Y/n]"
 read GITHUB_A
 case $GITHUB_A in
     "" | [Yy]* )
