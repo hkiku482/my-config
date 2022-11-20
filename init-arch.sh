@@ -2,7 +2,7 @@
 
 GOARCHI="go1.19.3.linux-amd64.tar.gz"
 
-pacman -Syu && pacman -S vim zsh git openssh wget noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im ufw --needed
+pacman -Syu && pacman -S vim zsh git openssh wget noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im ufw yay --needed
 
 echo "GTK_IM_MODULE=fcitx5" >> /etc/environment
 echo "QT_IM_MODULE=fcitx5" >> /etc/environment
