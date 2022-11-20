@@ -2,7 +2,7 @@
 
 GOARCHI="go1.19.3.linux-amd64.tar.gz"
 
-pacman -Syu && pacman -S vim zsh git openssh wget noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
+pacman -Syu && pacman -S vim zsh git openssh wget noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im ufw --needed
 
 echo "GTK_IM_MODULE=fcitx5" >> /etc/environment
 echo "QT_IM_MODULE=fcitx5" >> /etc/environment
@@ -48,7 +48,6 @@ case $RUSTC_A in
     "" | [Yy]* ) curl https://sh.rustup.rs -sSf | sh ;;
     * ) echo "skipped installing cargo" ;;
 esac
-
 
 echo -n "do you want to get golang? [Y/n]"
 read GO_A
