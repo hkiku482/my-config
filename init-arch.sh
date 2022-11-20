@@ -2,14 +2,16 @@
 
 GOARCHI="go1.19.3.linux-amd64.tar.gz"
 
-pacman -Syu && pacman -S vim zsh git openssh wget noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im ufw yay --needed
+sudo pacman -Syu && pacman -S ufw yay vim zsh git openssh wget noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
 
-echo "GTK_IM_MODULE=fcitx5" >> /etc/environment
-echo "QT_IM_MODULE=fcitx5" >> /etc/environment
-echo "XMODIFIERS=@im=fcitx5" >> /etc/environment
-echo "DefaultIMModule=fcitx5" >> /etc/environment
+sudo tee -a /etc/environment <<EOT > /dev/null
+GTK_IM_MODULE=fcitx5
+QT_IM_MODULE=fcitx5
+XMODIFIERS=@im=fcitx5
+DefaultIMModule=fcitx5
+EOT
 
-ufw enable
+sudo ufw enable
 
 echo -n "do you use github? [Y/n]"
 read GITHUB_A
@@ -38,8 +40,8 @@ echo -n "do you want to set up docker? [Y/n]"
 read DOCKER_A
 case $DOCKER_A in
     "" | [Yy]* )
-    pacman -S docker docker-compose
-    gpasswd -a $USER docker
+    sudo pacman -S docker docker-compose
+    sudo gpasswd -a $USER docker
     ;;
    * ) echo "skipped docker setting";;
 esac
@@ -56,9 +58,9 @@ read GO_A
 case $GO_A in
     "" | [Yy]* )
     wget https://go.dev/dl/$GOARCHI -P ~/
-    tar -zxvf ~/$GOARCHI -C /usr/local/
+    sudo tar -zxvf ~/$GOARCHI -C /usr/local/
     rm -rf ~/$GOARCHI
-    ln -s /usr/local/go/bin/go /usr/bin
+    sudo ln -s /usr/local/go/bin/go /usr/bin
     ;;
     * ) echo "skipped installing golang" ;;
 esac
