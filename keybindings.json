@@ -8,10 +8,5 @@
     "key": "shift+tab",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+space",
-    "command": "hideSuggestWidget",
-    "when": "suggestWidgetVisible && textInputFocus"
   }
 ]
