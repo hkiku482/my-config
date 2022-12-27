@@ -69,9 +69,9 @@ case $GITHUB_A in
     "" | [Yy]* ) echo "##### GitHub Publick Key #####"; cat ~/.ssh/github.pub; echo "##############################"
 esac
 
-wget https://raw.githubusercontent.com/hkiku482/my-config/main/.vimrc ~/.vimrc
+sudo curl https://raw.githubusercontent.com/hkiku482/my-config/main/.vimrc -o ~/.vimrc
 
-curl https://raw.githubusercontent.com/agnoster/agnoster-zsh-theme/master/agnoster.zsh-theme -o /usr/share/zsh/functions/Prompts/prompt_agnoster_setup
+sudo curl https://raw.githubusercontent.com/agnoster/agnoster-zsh-theme/master/agnoster.zsh-theme -o /usr/share/zsh/functions/Prompts/prompt_agnoster_setup
 
 cat << EOS > ~/.zshrc
 
