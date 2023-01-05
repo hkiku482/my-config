@@ -2,7 +2,9 @@
 
 GOARCHI="go1.19.3.linux-amd64.tar.gz"
 
-sudo pacman -Syu && pacman -S archlinux-keyring && pacman -S yay vim zsh git openssh wget noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
+sudo pacman -Syu
+sudo pacman -S archlinux-keyring
+sudo pacman -S yay vim zsh git openssh wget noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
 
 sudo tee -a /etc/environment <<EOT > /dev/null
 GTK_IM_MODULE=fcitx5
