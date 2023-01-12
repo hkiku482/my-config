@@ -12,12 +12,6 @@
   "emmet.variables": {
     "lang": "ja"
   },
-  "emmet.includeLanguages": {
-    "php": "html"
-  },
-  "emmet.syntaxProfiles": {
-    "php": "html"
-  },
   "editor.renderWhitespace": "all",
   "explorer.confirmDragAndDrop": false,
   "git.ignoreMissingGitWarning": true,
@@ -58,6 +52,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "window.zoomLevel": -1,
-  "workbench.iconTheme": "material-icon-theme",
   "dev.containers.cacheVolume": false
 }
