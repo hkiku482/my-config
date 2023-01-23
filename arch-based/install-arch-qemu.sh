@@ -10,17 +10,13 @@ tee user_configuration.json << EOF
         "linux"
     ],
     "mirror-region": {
-        "Japan": {
-            "http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/$repo/os/$arch": true,
-            "http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/$repo/os/$arch": true,
-            "http://mirrors.cat.net/archlinux/$repo/os/$arch": true,
-            "https://ftp.jaist.ac.jp/pub/Linux/ArchLinux/$repo/os/$arch": true,
-            "https://mirror.saebasol.org/archlinux/$repo/os/$arch": true,
-            "https://mirrors.cat.net/archlinux/$repo/os/$arch": true
+        "Worldwide": {
+            "https://mirror.rackspace.com/archlinux/$repo/os/$arch": true
         }
     },
+    },
     "nic": {
-        "type": "NM"
+        "type": "nm"
     },
     "ntp": true,
     "profile": null,
