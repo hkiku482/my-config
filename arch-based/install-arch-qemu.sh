@@ -22,7 +22,7 @@ tee user_configuration.json << EOF
     "nic": {
         "type": "NM"
     },
-    ntp: true,
+    "ntp": true,
     "profile": null,
     "script": "guided",
     "swap": false,
@@ -76,4 +76,4 @@ tee user_credentials.json << EOF
 }
 EOF
 
-archinstall --config user_configuration.json --disk user_disk_layout.json --creds user_credentials.json 
+archinstall --config user_configuration.json --disk-layout user_disk_layout.json --creds user_credentials.json 
