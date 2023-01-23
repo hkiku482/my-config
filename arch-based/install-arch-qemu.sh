@@ -1,4 +1,4 @@
-tee user_configuration.json << EOF
+tee user_configuration.json << EOF > /dev/null
 {
     "audio": null,
     "bootloader": "grub-install",
@@ -9,11 +9,15 @@ tee user_configuration.json << EOF
     "kernels": [
         "linux"
     ],
-    "mirror-region": {
-        "Worldwide": {
-            "https://mirror.rackspace.com/archlinux/$repo/os/$arch": true
+    "mirror-region": {        
+        "Japan": {
+            "http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/\$repo/os/\$arch": true,
+            "http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/\$repo/os/\$arch": true,
+            "http://mirrors.cat.net/archlinux/\$repo/os/\$arch": true,
+            "https://ftp.jaist.ac.jp/pub/Linux/ArchLinux/\$repo/os/\$arch": true,
+            "https://mirror.saebasol.org/archlinux/\$repo/os/\$arch": true,
+            "https://mirrors.cat.net/archlinux/\$repo/os/\$arch": true
         }
-    },
     },
     "nic": {
         "type": "nm"
@@ -26,7 +30,7 @@ tee user_configuration.json << EOF
 }
 EOF
 
-tee user_disk_layout.json << EOF
+tee user_disk_layout.json << EOF > /dev/null
 {
     "/dev/vda": {
         "partitions" : [
@@ -60,7 +64,7 @@ tee user_disk_layout.json << EOF
 }
 EOF
 
-tee user_credentials.json << EOF
+tee user_credentials.json << EOF > /dev/null
 {
     "!users": [
         {
