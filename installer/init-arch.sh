@@ -1,10 +1,12 @@
 # this script can run Arch linux based distros (Manjaro, EndoavourOS etc)
-
-GOARCHI="go1.19.3.linux-amd64.tar.gz"
+REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main/"
+TMP_DIR="/tmp/hkiku482-my-config"
 
 sudo pacman -Syu
 sudo pacman -S archlinux-keyring
-sudo pacman -S yay vim zsh git openssh wget noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
+sudo pacman -S vim neovim zsh git openssh wget noto-fonts-cjk powerline fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
+
+mkdir $TMP_DIR
 
 sudo tee -a /etc/environment <<EOT > /dev/null
 GTK_IM_MODULE=fcitx5
@@ -13,6 +15,22 @@ XMODIFIERS=@im=fcitx5
 DefaultIMModule=fcitx5
 EOT
 
+# AUR
+echo -n "do you want to use aur(yay)? [Y/n]"
+read RUSTC_A
+case $RUSTC_A in
+    "" | [Yy]* )
+    git clone https://aur.archlinux.org/yay.git ${TMP_DIR}/yay
+    PREV_DIR=$(pwd)
+    cd ${TMP_DIR}/yay
+    makepkg -sirc
+    cd $PREV_DIR
+    ;;
+    * ) echo "skipped" ;;
+esac
+
+
+# GitHub
 echo -n "do you use github? [Y/n]"
 read GITHUB_A
 case $GITHUB_A in
@@ -36,90 +54,52 @@ EOS
    * ) echo "skipped github setting";;
 esac
 
+# Docker
 echo -n "do you want to set up docker? [Y/n]"
 read DOCKER_A
 case $DOCKER_A in
     "" | [Yy]* )
-    sudo pacman -S docker docker-compose
+    sudo pacman -S docker docker-compose --needed
     sudo gpasswd -a $USER docker
     ;;
    * ) echo "skipped docker setting";;
 esac
 
+# Rust
 echo -n "do you want to get cargo(rustc)? [Y/n]"
 read RUSTC_A
 case $RUSTC_A in
-    "" | [Yy]* ) curl https://sh.rustup.rs -sSf | sh ;;
+    "" | [Yy]* ) sudo pacman -S rust --needed ;;
     * ) echo "skipped installing cargo" ;;
 esac
 
+# Golang
 echo -n "do you want to get golang? [Y/n]"
 read GO_A
 case $GO_A in
-    "" | [Yy]* )
-    wget https://go.dev/dl/$GOARCHI -P ~/
-    sudo tar -zxvf ~/$GOARCHI -C /usr/local/
-    rm -rf ~/$GOARCHI
-    sudo ln -s /usr/local/go/bin/go /usr/bin
-    ;;
+    "" | [Yy]* ) sudo pacman -S go --needed ;;
     * ) echo "skipped installing golang" ;;
+esac
+
+# Python
+echo -n "do you want to get python? [Y/n]"
+read GO_A
+case $GO_A in
+    "" | [Yy]* ) sudo pacman -S python python-pip --needed ;;
+    * ) echo "skipped installing python" ;;
 esac
 
 case $GITHUB_A in
     "" | [Yy]* ) echo "##### GitHub Publick Key #####"; cat ~/.ssh/github.pub; echo "##############################"
 esac
 
-sudo curl https://raw.githubusercontent.com/hkiku482/my-config/main/.vimrc -o ~/.vimrc
+# .vimrc
+curl "${REPOSITORY_ROOT}user/.vimrc" -o ~/.vimrc
 
-sudo curl https://raw.githubusercontent.com/agnoster/agnoster-zsh-theme/master/agnoster.zsh-theme -o /usr/share/zsh/functions/Prompts/prompt_agnoster_setup
+# Zsh
+curl https://raw.githubusercontent.com/agnoster/agnoster-zsh-theme/master/agnoster.zsh-theme -o /usr/share/zsh/functions/Prompts/prompt_agnoster_setup
+curl "${REPOSITORY_ROOT}user/.zshrc" -o ~/.zshrc
 
-cat << EOS > ~/.zshrc
-
-autoload -Uz promptinit
-promptinit
-prompt agnoster
-
-setopt histignorealldups sharehistory
-
-bindkey -e
-
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
-
-autoload -Uz compinit
-compinit
-
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
-eval "\$(dircolors -b)"
-zstyle ':completion:*:default' list-colors \${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
-
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u \$USER -o pid,%cpu,tty,cputime,cmd'
-
-alias ll='ls -ahlvF'
-
-bindkey '\e[1~' beginning-of-line
-bindkey '\e[4~' end-of-line
-bindkey '\e[3~' delete-char
-bindkey '\e[2~' quoted-insert
-bindkey '\e[1;5C' forward-word
-bindkey '\e[1;5D' backward-word
-bindkey '\e[5C' forward-word
-bindkey '\e[5D' backward-word
-bindkey '\e\e[C' forward-word
-bindkey '\e\e[D' backward-word
-EOS
+rm -rf $TMP_DIR
 
 chsh -s /bin/zsh $USER
