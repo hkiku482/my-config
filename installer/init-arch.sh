@@ -1,5 +1,5 @@
 # this script can run Arch linux based distros (Manjaro, EndoavourOS etc)
-REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main/"
+REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main"
 TMP_DIR="/tmp/hkiku482-my-config"
 
 sudo pacman -Syu
@@ -83,23 +83,30 @@ esac
 
 # Python
 echo -n "do you want to get python? [Y/n]"
-read GO_A
-case $GO_A in
+read PY_A
+case $PY_A in
     "" | [Yy]* ) sudo pacman -S python python-pip --needed ;;
     * ) echo "skipped installing python" ;;
 esac
 
-case $GITHUB_A in
-    "" | [Yy]* ) echo "##### GitHub Publick Key #####"; cat ~/.ssh/github.pub; echo "##############################"
+# Desktop
+echo -n "do you want to use i3wm? [Y/n]"
+read WM_A
+case $WM_A in
+    "" | [Yy]* )
+    curl "${REPOSITORY_ROOT}/i3/use-i3.sh" -o ${TMP_DIR}/i3.sh
+    chmod 744 ${TMP_DIR}/i3.sh
+    ${TMP_DIR}/i3.sh
+    ;;
+    * ) echo "skipped installing python" ;;
 esac
 
 # .vimrc
-curl "${REPOSITORY_ROOT}user/.vimrc" -o ~/.vimrc
+curl "${REPOSITORY_ROOT}/user/.vimrc" -o ~/.vimrc
 
 # Zsh
 curl https://raw.githubusercontent.com/agnoster/agnoster-zsh-theme/master/agnoster.zsh-theme -o /usr/share/zsh/functions/Prompts/prompt_agnoster_setup
-curl "${REPOSITORY_ROOT}user/.zshrc" -o ~/.zshrc
+curl "${REPOSITORY_ROOT}/user/.zshrc" -o ~/.zshrc
+chsh -s /bin/zsh $USER
 
 rm -rf $TMP_DIR
-
-chsh -s /bin/zsh $USER
