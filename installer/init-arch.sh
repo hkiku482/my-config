@@ -5,6 +5,7 @@ TMP_DIR="/tmp/hkiku482-my-config"
 sudo pacman -Syu
 sudo pacman -S archlinux-keyring
 sudo pacman -S vim neovim zsh git openssh wget noto-fonts-cjk powerline fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
+sudo pacman -S cups
 
 mkdir $TMP_DIR
 
@@ -25,10 +26,10 @@ case $RUSTC_A in
     cd ${TMP_DIR}/yay
     makepkg -sirc
     cd $PREV_DIR
+    yay -S google-chrome visual-studio-code-bin zoom
     ;;
     * ) echo "skipped" ;;
 esac
-
 
 # GitHub
 echo -n "do you use github? [Y/n]"
