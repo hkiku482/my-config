@@ -32,3 +32,7 @@ dc-run(){
     docker-compose run --rm -u $(id -u):$(id -g) $1 bash -c "${@:2:($#-1)}"
 }
 alias dcr=dc-run
+
+# plugins
+. /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+. /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
