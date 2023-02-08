@@ -4,8 +4,8 @@ TMP_DIR="/tmp/hkiku482-my-config"
 
 sudo pacman -Syu
 sudo pacman -S archlinux-keyring
-sudo pacman -S vim neovim zsh git openssh wget noto-fonts-cjk powerline fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
-sudo pacman -S cups
+sudo pacman -S vim zsh git openssh noto-fonts-cjk powerline fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
+sudo pacman -S cups neovim wget zsh-autosuggestions zsh-syntax-highlighting
 
 mkdir $TMP_DIR
 
@@ -18,8 +18,8 @@ EOT
 
 # AUR
 echo -n "do you want to use aur(yay)? [Y/n]"
-read RUSTC_A
-case $RUSTC_A in
+read AUR_A
+case $AUR_A in
     "" | [Yy]* )
     git clone https://aur.archlinux.org/yay.git ${TMP_DIR}/yay
     PREV_DIR=$(pwd)
