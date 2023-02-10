@@ -15,6 +15,6 @@ curl "${REPOSITORY_ROOT}/i3/handler/i3lock-color.sh" -o ~/.config/i3/i3lock-colo
 
 curl "${REPOSITORY_ROOT}/i3/config.rasi" -o ~/.config/rofi/config.rasi
 
-curl "${REPOSITORY_ROOT}/i3/i3blocks.config" ~/.config/i3blocks/config
-curl "${REPOSITORY_ROOT}/i3/handler/battery.sh" ~/.config/i3blocks/battery.sh
-curl "${REPOSITORY_ROOT}/i3/handler/audio.sh" ~/.config/i3blocks/audio.sh
+curl "${REPOSITORY_ROOT}/i3/i3blocks.config" -o ~/.config/i3blocks/config
+curl "${REPOSITORY_ROOT}/i3/handler/battery.sh" -o ~/.config/i3blocks/battery.sh
+curl "${REPOSITORY_ROOT}/i3/handler/audio.sh" -o ~/.config/i3blocks/audio.sh
