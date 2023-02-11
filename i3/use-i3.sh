@@ -3,7 +3,7 @@ REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main"
 sudo pacman -S xorg-server xorg-xinit xautolock light pavucontrol pulseaudio --needed
 sudo gpasswd -a $USER video
 
-sudo pacman -S lightdm lightdm-webkit2-greeter --needed
+sudo pacman -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan --needed
 
 sudo pacman -S i3-wm rofi i3blocks pamixer xss-lock ttf-roboto-mono awesome-terminal-fonts --needed
 yay -S i3lock-color
