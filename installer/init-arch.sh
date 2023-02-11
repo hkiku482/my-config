@@ -4,7 +4,7 @@ TMP_DIR="/tmp/hkiku482-my-config"
 
 sudo pacman -Syu
 sudo pacman -S archlinux-keyring
-sudo pacman -S vim zsh git openssh noto-fonts-cjk powerline fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
+sudo pacman -S vim zsh git openssh base-devel noto-fonts-cjk powerline fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
 sudo pacman -S cups neovim wget zsh-autosuggestions zsh-syntax-highlighting
 
 mkdir $TMP_DIR
@@ -106,7 +106,7 @@ esac
 curl "${REPOSITORY_ROOT}/user/.vimrc" -o ~/.vimrc
 
 # Zsh
-curl https://raw.githubusercontent.com/agnoster/agnoster-zsh-theme/master/agnoster.zsh-theme -o /usr/share/zsh/functions/Prompts/prompt_agnoster_setup
+sudo curl https://raw.githubusercontent.com/agnoster/agnoster-zsh-theme/master/agnoster.zsh-theme -o /usr/share/zsh/functions/Prompts/prompt_agnoster_setup
 curl "${REPOSITORY_ROOT}/user/.zshrc" -o ~/.zshrc
 chsh -s /bin/zsh $USER
 
