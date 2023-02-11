@@ -1,14 +1,15 @@
 REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main"
 
-sudo pacman -S xorg-server xorg-xinit xautolock light pavucontrol pulseaudio --needed
+sudo pacman -S xorg-server xorg-xinit xautolock --needed
 sudo gpasswd -a $USER video
 
 sudo pacman -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan --needed
 
-sudo pacman -S i3-wm rofi i3blocks pamixer xss-lock ttf-roboto-mono awesome-terminal-fonts --needed
+sudo pacman -S i3-wm rofi i3blocks xss-lock feh picom --needed
+sudo pacman -S light pavucontrol pulseaudio pamixer ttf-roboto-mono awesome-terminal-fonts --needed
 yay -S i3lock-color
 
-sudo pacman -S archlinux-wallpaper alacritty bpytop neofetch picom conky feh --needed
+sudo pacman -S archlinux-wallpaper alacritty bpytop neofetch conky --needed
 
 mkdir ~/.config/i3
 mkdir ~/.config/rofi
@@ -28,3 +29,5 @@ curl "${REPOSITORY_ROOT}/i3/handler/audio.sh" -o ~/.config/i3blocks/audio.sh
 chmod 744 ~/.config/i3blocks/audio.sh
 
 curl "${REPOSITORY_ROOT}/i3/alacritty.yml" -o ~/.config/alacritty/alacritty.yml
+
+sudo curl "${REPOSITORY_ROOT}/xorg/30-touchpad.conf" -o /etc/X11/xorg.conf.d/
