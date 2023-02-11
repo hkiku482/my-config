@@ -11,7 +11,7 @@ unset HOSTNAME
 
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen
-locale.gen
+locale-gen
 
 pacman -Syu
 pacman -S archlinux-keyring
