@@ -4,8 +4,9 @@ TMP_DIR="/tmp/hkiku482-my-config"
 
 sudo pacman -Syu
 sudo pacman -S archlinux-keyring
-sudo pacman -S vim zsh git openssh base-devel noto-fonts-cjk powerline fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
-sudo pacman -S cups neovim wget zsh-autosuggestions zsh-syntax-highlighting
+sudo pacman -S vim zsh git openssh base-devel --needed
+sudo pacman -S noto-fonts-cjk fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
+sudo pacman -S cups wget zsh-autosuggestions zsh-syntax-highlighting --needed
 
 mkdir $TMP_DIR
 
@@ -111,3 +112,7 @@ curl "${REPOSITORY_ROOT}/user/.zshrc" -o ~/.zshrc
 chsh -s /bin/zsh $USER
 
 rm -rf $TMP_DIR
+
+echo "================="
+echo "REBOOT RECOMENDED"
+echo "================="
