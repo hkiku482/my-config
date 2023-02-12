@@ -1,11 +1,12 @@
 /* MATERIAL DESIGN CONFIGURATION */
 configuration {
+  font: "Noto Sans CJK JP 10";
   modi:                       "drun,run,filebrowser";
-    show-icons:                 false;
-    display-drun:               " Apps";
-    display-run:                " Run";
-    display-filebrowser:        " Files";
-    display-window:             " Windows";
+  show-icons:                 false;
+  display-drun:               " Apps";
+  display-run:                " Run";
+  display-filebrowser:        " Files";
+  display-window:             " Windows";
   drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
   window-format:              "{w} · {c} · {t}";
 }
@@ -14,7 +15,7 @@ configuration {
   background:     #FFFFFFFF;
   background-alt: #F0F0F0FF;
   foreground:     #252525FF;
-  selected:       #0808FFFF;
+  selected:       #1BC2D1FF;
   active:         #10A778FF;
   urgent:         #C30771FF;
   border-colour:               var(selected);

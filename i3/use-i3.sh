@@ -15,6 +15,7 @@ mkdir ~/.config/i3
 mkdir ~/.config/rofi
 mkdir ~/.config/i3blocks
 mkdir ~/.config/alacritty
+mkdir ~/.config/conky
 
 curl "${REPOSITORY_ROOT}/i3/i3.config" -o ~/.config/i3/config
 curl "${REPOSITORY_ROOT}/i3/handler/i3lock-color.sh" -o ~/.config/i3/i3lock-color.sh
@@ -31,3 +32,6 @@ chmod 744 ~/.config/i3blocks/audio.sh
 curl "${REPOSITORY_ROOT}/i3/alacritty.yml" -o ~/.config/alacritty/alacritty.yml
 
 sudo curl "${REPOSITORY_ROOT}/xorg/30-touchpad.conf" -o /etc/X11/xorg.conf.d/
+
+git clone https://github.com/hkiku482/simple-conky.git ~/.config/conky
+rm -rf ~/.config/conky/.git
