@@ -8,5 +8,35 @@
     "key": "shift+tab",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "vscode-neovim.send",
+    "when": "editorFocus && neovim.mode == 'insert'",
+    "args": "<C-h>"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "vscode-neovim.send",
+    "when": "editorFocus && neovim.mode == 'insert'",
+    "args": "<C-j>"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "vscode-neovim.send",
+    "when": "editorFocus && neovim.mode == 'insert'",
+    "args": "<C-k>"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "vscode-neovim.send",
+    "when": "editorFocus && neovim.mode == 'insert'",
+    "args": "<C-l>"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "vscode-neovim.send",
+    "when": "editorFocus && neovim.mode == 'insert'",
+    "args": "<C-c>"
   }
 ]
