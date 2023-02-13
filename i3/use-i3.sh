@@ -5,7 +5,7 @@ sudo gpasswd -a $USER video
 
 sudo pacman -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan --needed
 
-sudo pacman -S i3-wm rofi i3blocks xss-lock feh picom --needed
+sudo pacman -S i3-wm rofi i3blocks xss-lock feh picom network-manager-applet --needed
 sudo pacman -S light pavucontrol pulseaudio pamixer thunar tumbler kdf ttf-roboto-mono awesome-terminal-fonts --needed
 yay -S i3lock-color
 
