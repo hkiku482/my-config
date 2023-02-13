@@ -6,7 +6,7 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "editor.fontFamily": "'Source Code Pro Medium'",
+  "editor.fontFamily": "Source Han Code JP",
   "editor.fontSize": 15,
   "files.encoding": "utf8",
   "emmet.variables": {
@@ -15,29 +15,12 @@
   "editor.renderWhitespace": "all",
   "explorer.confirmDragAndDrop": false,
   "git.ignoreMissingGitWarning": true,
-  "workbench.colorTheme": "Default Light+",
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.editorAssociations": {
     "*.DMP": "default"
   },
-  "vim.vimrc.enable": true,
-  "vim.vimrc.path": "",
-  "vim.useSystemClipboard": true,
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["u"],
-      "after": [],
-      "commands": ["undo"]
-    },
-    {
-      "before": ["<C-r>"],
-      "after": [],
-      "commands": ["redo"]
-    }
-  ],
-  "remote.SSH.connectTimeout": 30,
   "editor.unicodeHighlight.nonBasicASCII": false,
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -52,5 +35,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "window.zoomLevel": -1,
-  "dev.containers.cacheVolume": false
+  "dev.containers.cacheVolume": false,
+  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.iconTheme": "material-icon-theme",
+  "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.lua"
 }
