@@ -27,7 +27,7 @@ case $AUR_A in
     cd ${TMP_DIR}/yay
     makepkg -sirc
     cd $PREV_DIR
-    yay -S google-chrome visual-studio-code-bin zoom
+    yay -S google-chrome visual-studio-code-bin zoom otf-source-han-code-jp
     ;;
     * ) echo "skipped" ;;
 esac
