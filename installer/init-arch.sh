@@ -1,10 +1,10 @@
-# this script can run Arch linux based distros (Manjaro, EndoavourOS etc)
+# this script can run Arch linux based distros (Archm, Manjaro, EndoavourOS etc)
 REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main"
 TMP_DIR="/tmp/hkiku482-my-config"
 
 sudo pacman -Syu
 sudo pacman -S archlinux-keyring
-sudo pacman -S vim zsh git openssh base-devel nftables --needed
+sudo pacman -S neovim zsh git openssh base-devel nftables --needed
 sudo pacman -S man nvtop noto-fonts-cjk noto-fonts-emoji fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
 sudo pacman -S cups wget zsh-autosuggestions zsh-syntax-highlighting --needed
 
@@ -28,6 +28,9 @@ case $AUR_A in
     makepkg -sirc
     cd $PREV_DIR
     yay -S google-chrome visual-studio-code-bin zoom otf-source-han-code-jp
+    mkdir -p ~/.config/Code/User
+    curl "${REPOSITORY_ROOT}/code/settings.json" -o ~/.config/Code/User/settings.json
+    curl "${REPOSITORY_ROOT}/code/keybindings.json" -o ~/.config/Code/User/keybindings.json
     ;;
     * ) echo "skipped" ;;
 esac
@@ -103,8 +106,11 @@ case $WM_A in
     * ) echo "skipped installing python" ;;
 esac
 
-# .vimrc
-curl "${REPOSITORY_ROOT}/user/.vimrc" -o ~/.vimrc
+# Neovim
+mkdir ~/.config/nvim
+git clone https://github.com/hkiku482/simple-nvim.git ~/.config/nvim
+rm ~/.config/nvim/.git
+rm ~/.config/nvim/.gitignore
 
 # Zsh
 sudo curl https://raw.githubusercontent.com/agnoster/agnoster-zsh-theme/master/agnoster.zsh-theme -o /usr/share/zsh/functions/Prompts/prompt_agnoster_setup

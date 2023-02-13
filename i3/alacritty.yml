@@ -1,7 +1,7 @@
 font:
+  size: 7.5
   normal:
     family: Source Code Pro
-    style: Regular
 
   bold:
     family: Source Code Pro
@@ -17,32 +17,32 @@ font:
 
 colors:
   primary:
-    background: '0x444444'
+    background: '0x000000'
     foreground: '0xEBEBEB'
 
   cursor:
-    text: '0xFF261E'
-    cursor: '0xFF261E'
+    text: '0x202020'
+    cursor: '0xEBFFFF'
 
   normal:
     black:   '0x0d0d0d'
-    red:     '0xFF301B'
-    green:   '0xA0E521'
-    yellow:  '0xFFC620'
-    blue:    '0x1BA6FA'
-    magenta: '0x8763B8'
-    cyan:    '0x21DEEF'
-    white:   '0xEBEBEB'
+    red:     '0xFE1C1C'
+    green:   '0x36EC3C'
+    yellow:  '0xFEFE1C'
+    blue:    '0x0080FF'
+    magenta: '0xE70781'
+    cyan:    '0x2EEDEF'
+    white:   '0xD8D8D8'
 
   bright:
-    black:   '0x6D7070'
-    red:     '0xFF4352'
-    green:   '0xB8E466'
-    yellow:  '0xFFD750'
-    blue:    '0x1BA6FA'
-    magenta: '0xA578EA'
-    cyan:    '0x73FBF1'
-    white:   '0xFEFEF8'
+    black:   '0x909090'
+    red:     '0xFF8585'
+    green:   '0x9EFFB8'
+    yellow:  '0xFFFFA0'
+    blue:    '0x85C2FF'
+    magenta: '0xFF9ED3'
+    cyan:    '0xA6FEFF'
+    white:   '0xF8F8F8'
 
 window:
-  opacity: 0.8
+  opacity: 0.75
