@@ -17,20 +17,21 @@ mkdir ~/.config/i3blocks
 mkdir ~/.config/alacritty
 mkdir ~/.config/conky
 
-curl "${REPOSITORY_ROOT}/i3/i3.config" -o ~/.config/i3/config
-curl "${REPOSITORY_ROOT}/i3/i3-appearance.config" -o ~/.config/i3/appearance
-curl "${REPOSITORY_ROOT}/i3/handler/i3lock-color.sh" -o ~/.config/i3/i3lock-color.sh
+curl "${REPOSITORY_ROOT}/i3-dotfiles/alacritty/alacritty.yml" -o ~/.config/alacritty/alacritty.yml
+
+curl "${REPOSITORY_ROOT}/i3-dotfiles/i3/config" -o ~/.config/i3/config
+curl "${REPOSITORY_ROOT}/i3-dotfiles/i3/appearance.conf" -o ~/.config/i3/appearance.conf
+curl "${REPOSITORY_ROOT}/i3-dotfiles/i3/i3lock-color.sh" -o ~/.config/i3/i3lock-color.sh
 chmod 744 ~/.config/i3/i3lock-color.sh
 
-curl "${REPOSITORY_ROOT}/i3/config.rasi" -o ~/.config/rofi/config.rasi
-
-curl "${REPOSITORY_ROOT}/i3/i3blocks.config" -o ~/.config/i3blocks/config
-curl "${REPOSITORY_ROOT}/i3/handler/battery.sh" -o ~/.config/i3blocks/battery.sh
+curl "${REPOSITORY_ROOT}/i3-dotfiles/i3blocks/config" -o ~/.config/i3blocks/config
+curl "${REPOSITORY_ROOT}/i3-dotfiles/i3blocks/audio.sh" -o ~/.config/i3blocks/audio.sh
+curl "${REPOSITORY_ROOT}/i3-dotfiles/i3blocks/battery.sh" -o ~/.config/i3blocks/battery.sh
 chmod 744 ~/.config/i3blocks/battery.sh
-curl "${REPOSITORY_ROOT}/i3/handler/audio.sh" -o ~/.config/i3blocks/audio.sh
 chmod 744 ~/.config/i3blocks/audio.sh
 
-curl "${REPOSITORY_ROOT}/i3/alacritty.yml" -o ~/.config/alacritty/alacritty.yml
+curl "${REPOSITORY_ROOT}/i3-dotfiles/rofi/config.rasi" -o ~/.config/rofi/config.rasi
+curl "${REPOSITORY_ROOT}/i3-dotfiles/rofi/color.rasi" -o ~/.config/rofi/color.rasi
 
 sudo curl "${REPOSITORY_ROOT}/xorg/30-touchpad.conf" -o /etc/X11/xorg.conf.d/
 
