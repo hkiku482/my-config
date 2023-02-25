@@ -6,7 +6,7 @@ sudo gpasswd -a $USER video
 sudo pacman -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan --needed
 
 sudo pacman -S i3-wm rofi i3blocks xss-lock feh picom network-manager-applet --needed
-sudo pacman -S light pavucontrol pulseaudio pamixer thunar tumbler thunar-volman ttf-roboto-mono ttf-dejavu awesome-terminal-fonts --needed
+sudo pacman -S light pavucontrol pulseaudio pamixer thunar tumbler gvfs gvfs-smb udiskie ttf-roboto-mono ttf-dejavu awesome-terminal-fonts --needed
 yay -S i3lock-color
 
 sudo pacman -S archlinux-wallpaper alacritty bpytop neofetch conky --needed
@@ -18,6 +18,7 @@ mkdir ~/.config/alacritty
 mkdir ~/.config/conky
 
 curl "${REPOSITORY_ROOT}/i3/i3.config" -o ~/.config/i3/config
+curl "${REPOSITORY_ROOT}/i3/i3-appearance.config" -o ~/.config/i3/appearance
 curl "${REPOSITORY_ROOT}/i3/handler/i3lock-color.sh" -o ~/.config/i3/i3lock-color.sh
 chmod 744 ~/.config/i3/i3lock-color.sh
 

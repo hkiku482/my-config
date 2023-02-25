@@ -74,7 +74,10 @@ esac
 echo -n "do you want to get cargo(rustc)? [Y/n]"
 read RUSTC_A
 case $RUSTC_A in
-    "" | [Yy]* ) sudo pacman -S rust --needed ;;
+    "" | [Yy]* )
+    sudo pacman -S rustup --needed
+    rustup default stable
+    ;;
     * ) echo "skipped installing cargo" ;;
 esac
 
