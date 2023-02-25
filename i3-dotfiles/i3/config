@@ -170,4 +170,4 @@ bindsym $mod+Shift+q kill
 exec --no-startup-id picom --fade-delta=2 --inactive-opacity=1.0 --shadow-opacity=0 -b
 
 ## APPEARANCE ##
-include ~/.config/i3/default-appearance.conf
+include ~/.config/i3/appearance.conf

@@ -11,7 +11,7 @@ configuration {
   window-format:              "{w} · {c} · {t}";
 }
 
-@import "default-color.rasi"
+@import "color.rasi"
 * {
   border-colour:               var(selected);
   handle-colour:               var(selected);
