@@ -4,7 +4,7 @@ TMP_DIR="/tmp/hkiku482-my-config"
 
 sudo pacman -Syu
 sudo pacman -S archlinux-keyring
-sudo pacman -S neovim zsh git openssh base-devel nftables --needed
+sudo pacman -S zsh git openssh base-devel --needed
 sudo pacman -S man nvtop noto-fonts-cjk noto-fonts-emoji fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
 sudo pacman -S cups wget zsh-autosuggestions zsh-syntax-highlighting --needed
 
@@ -102,16 +102,27 @@ echo -n "do you want to use i3wm? [Y/n]"
 read WM_A
 case $WM_A in
     "" | [Yy]* )
-    curl "${REPOSITORY_ROOT}/i3/use-i3.sh" -o ${TMP_DIR}/i3.sh
+    curl "${REPOSITORY_ROOT}/i3-dotfiles/use-i3.sh" -o ${TMP_DIR}/i3.sh
     chmod 744 ${TMP_DIR}/i3.sh
     ${TMP_DIR}/i3.sh
     ;;
-    * ) echo "skipped installing python" ;;
+    * ) echo "skipped installing i3wm" ;;
 esac
 
 # Neovim
-mkdir ~/.config/nvim
-git clone https://github.com/hkiku482/simple-nvim.git ~/.config/nvim
+echo -n "do you want to use neovim? [Y/n]"
+read NVIM_A
+case $NVIM_A in
+    "" | [Yy]* )
+    sudo pacman -S nvim --needed
+    mkdir ~/.config/nvim
+    git clone https://github.com/hkiku482/simple-nvim.git ~/.config/nvim
+    rm -rf ~/.config/nvim/.git
+    yay -S nvim-packer-git
+    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    ;;
+    * ) echo "skipped installing neovim" ;;
+esac
 rm ~/.config/nvim/.git
 rm ~/.config/nvim/.gitignore
 
