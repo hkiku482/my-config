@@ -11,32 +11,58 @@
   },
   {
     "key": "ctrl+h",
-    "command": "vscode-neovim.send",
-    "when": "editorFocus && neovim.mode == 'insert'",
-    "args": "<C-h>"
+    "command": "cursorLeft",
+    "when": "editorFocus && neovim.mode == 'insert'"
+  },
+  {
+    "key": "j",
+    "command": "cursorDown",
+    "when": "editorFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "j",
+    "command": "cursorDown",
+    "when": "editorFocus && neovim.mode == 'visual'"
   },
   {
     "key": "ctrl+j",
-    "command": "vscode-neovim.send",
-    "when": "editorFocus && neovim.mode == 'insert'",
-    "args": "<C-j>"
+    "command": "cursorDown",
+    "when": "editorFocus && neovim.mode == 'insert'"
   },
   {
     "key": "ctrl+k",
-    "command": "vscode-neovim.send",
-    "when": "editorFocus && neovim.mode == 'insert'",
-    "args": "<C-k>"
+    "command": "cursorUp",
+    "when": "editorFocus && neovim.mode == 'insert'"
+  },
+  {
+    "key": "k",
+    "command": "cursorUp",
+    "when": "editorFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "k",
+    "command": "cursorUp",
+    "when": "editorFocus && neovim.mode == 'visual'"
   },
   {
     "key": "ctrl+l",
-    "command": "vscode-neovim.send",
-    "when": "editorFocus && neovim.mode == 'insert'",
-    "args": "<C-l>"
+    "command": "cursorRight",
+    "when": "editorFocus && neovim.mode == 'insert'"
   },
   {
     "key": "ctrl+c",
     "command": "vscode-neovim.send",
     "when": "editorFocus && neovim.mode == 'insert'",
     "args": "<C-c>"
+  },
+  {
+    "key": "u",
+    "command": "undo",
+    "when": "editorFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "redo",
+    "when": "editorFocus && neovim.mode == 'normal'"
   }
 ]

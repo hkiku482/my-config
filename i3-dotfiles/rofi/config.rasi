@@ -11,13 +11,8 @@ configuration {
   window-format:              "{w} · {c} · {t}";
 }
 
+@import "color.rasi"
 * {
-  background:     #FFFFFFFF;
-  background-alt: #F0F0F0FF;
-  foreground:     #252525FF;
-  selected:       #1BC2D1FF;
-  active:         #10A778FF;
-  urgent:         #C30771FF;
   border-colour:               var(selected);
   handle-colour:               var(selected);
   background-colour:           var(background);

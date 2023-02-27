@@ -6,7 +6,7 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "editor.fontFamily": "Source Han Code JP",
+  "editor.fontFamily": "Source Han Code JP, PowerlineSymbols",
   "editor.fontSize": 15,
   "files.encoding": "utf8",
   "emmet.variables": {
@@ -23,7 +23,7 @@
   },
   "editor.unicodeHighlight.nonBasicASCII": false,
   "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "explorer.compactFolders": false,
   "[json]": {
@@ -36,7 +36,15 @@
   },
   "window.zoomLevel": -1,
   "dev.containers.cacheVolume": false,
-  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "material-icon-theme",
-  "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.lua"
+  "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.lua",
+  "terminal.integrated.fontFamily": "Source Han Code JP, PowerlineSymbols",
+  "rsp-ui.enableStartServerOnActivation": [
+    {
+      "id": "redhat.vscode-community-server-connector",
+      "name": "Community Server Connector",
+      "startOnActivation": true
+    }
+  ]
 }

@@ -1,10 +1,10 @@
-# this script can run Arch linux based distros (Manjaro, EndoavourOS etc)
+# this script can run Arch linux based distros (Archm, Manjaro, EndoavourOS etc)
 REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main"
 TMP_DIR="/tmp/hkiku482-my-config"
 
 sudo pacman -Syu
 sudo pacman -S archlinux-keyring
-sudo pacman -S vim zsh git openssh base-devel nftables --needed
+sudo pacman -S zsh git openssh base-devel --needed
 sudo pacman -S man nvtop noto-fonts-cjk noto-fonts-emoji fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
 sudo pacman -S cups wget zsh-autosuggestions zsh-syntax-highlighting --needed
 
@@ -28,6 +28,9 @@ case $AUR_A in
     makepkg -sirc
     cd $PREV_DIR
     yay -S google-chrome visual-studio-code-bin zoom otf-source-han-code-jp
+    mkdir -p ~/.config/Code/User
+    curl "${REPOSITORY_ROOT}/code/settings.json" -o ~/.config/Code/User/settings.json
+    curl "${REPOSITORY_ROOT}/code/keybindings.json" -o ~/.config/Code/User/keybindings.json
     ;;
     * ) echo "skipped" ;;
 esac
@@ -71,7 +74,10 @@ esac
 echo -n "do you want to get cargo(rustc)? [Y/n]"
 read RUSTC_A
 case $RUSTC_A in
-    "" | [Yy]* ) sudo pacman -S rust --needed ;;
+    "" | [Yy]* )
+    sudo pacman -S rustup --needed
+    rustup default stable
+    ;;
     * ) echo "skipped installing cargo" ;;
 esac
 
@@ -96,15 +102,29 @@ echo -n "do you want to use i3wm? [Y/n]"
 read WM_A
 case $WM_A in
     "" | [Yy]* )
-    curl "${REPOSITORY_ROOT}/i3/use-i3.sh" -o ${TMP_DIR}/i3.sh
+    curl "${REPOSITORY_ROOT}/i3-dotfiles/use-i3.sh" -o ${TMP_DIR}/i3.sh
     chmod 744 ${TMP_DIR}/i3.sh
     ${TMP_DIR}/i3.sh
     ;;
-    * ) echo "skipped installing python" ;;
+    * ) echo "skipped installing i3wm" ;;
 esac
 
-# .vimrc
-curl "${REPOSITORY_ROOT}/user/.vimrc" -o ~/.vimrc
+# Neovim
+echo -n "do you want to use neovim? [Y/n]"
+read NVIM_A
+case $NVIM_A in
+    "" | [Yy]* )
+    sudo pacman -S nvim --needed
+    mkdir ~/.config/nvim
+    git clone https://github.com/hkiku482/simple-nvim.git ~/.config/nvim
+    rm -rf ~/.config/nvim/.git
+    yay -S nvim-packer-git
+    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    ;;
+    * ) echo "skipped installing neovim" ;;
+esac
+rm ~/.config/nvim/.git
+rm ~/.config/nvim/.gitignore
 
 # Zsh
 sudo curl https://raw.githubusercontent.com/agnoster/agnoster-zsh-theme/master/agnoster.zsh-theme -o /usr/share/zsh/functions/Prompts/prompt_agnoster_setup
