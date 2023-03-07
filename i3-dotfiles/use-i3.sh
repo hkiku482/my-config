@@ -11,11 +11,11 @@ yay -S i3lock-color
 
 sudo pacman -S archlinux-wallpaper alacritty bpytop neofetch conky --needed
 
-mkdir ~/.config/i3
-mkdir ~/.config/rofi
-mkdir ~/.config/i3blocks
-mkdir ~/.config/alacritty
-mkdir ~/.config/conky
+mkdir -p ~/.config/i3
+mkdir -p ~/.config/rofi
+mkdir -p ~/.config/i3blocks
+mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/conky
 
 curl "${REPOSITORY_ROOT}/i3-dotfiles/alacritty/alacritty.yml" -o ~/.config/alacritty/alacritty.yml
 
