@@ -33,7 +33,7 @@ chmod 744 ~/.config/i3blocks/audio.sh
 curl "${REPOSITORY_ROOT}/i3-dotfiles/rofi/config.rasi" -o ~/.config/rofi/config.rasi
 curl "${REPOSITORY_ROOT}/i3-dotfiles/rofi/color.rasi" -o ~/.config/rofi/color.rasi
 
-sudo curl "${REPOSITORY_ROOT}/xorg/30-touchpad.conf" -o /etc/X11/xorg.conf.d/
+sudo curl "${REPOSITORY_ROOT}/xorg/30-touchpad.conf" -o /etc/X11/xorg.conf.d/30-touchpad.conf
 
 git clone https://github.com/hkiku482/simple-conky.git ~/.config/conky
 rm -rf ~/.config/conky/.git
