@@ -7,7 +7,7 @@ sudo pacman -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan --n
 
 sudo pacman -S i3-wm rofi i3blocks xss-lock feh picom network-manager-applet --needed
 sudo pacman -S light acpi pavucontrol pulseaudio pamixer thunar tumbler gvfs gvfs-smb udiskie ttf-roboto-mono ttf-dejavu awesome-terminal-fonts --needed
-yay -S i3lock-color
+yay -S i3lock-color --needed
 
 sudo pacman -S archlinux-wallpaper alacritty bpytop neofetch conky --needed
 
