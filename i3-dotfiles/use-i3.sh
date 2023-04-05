@@ -14,6 +14,7 @@ sudo pacman -S archlinux-wallpaper alacritty bpytop neofetch conky --needed
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/rofi
 mkdir -p ~/.config/i3blocks
+mkdir -p ~/.config/picom
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/conky
 
@@ -29,6 +30,8 @@ curl "${REPOSITORY_ROOT}/i3-dotfiles/i3blocks/audio.sh" -o ~/.config/i3blocks/au
 curl "${REPOSITORY_ROOT}/i3-dotfiles/i3blocks/battery.sh" -o ~/.config/i3blocks/battery.sh
 chmod 744 ~/.config/i3blocks/battery.sh
 chmod 744 ~/.config/i3blocks/audio.sh
+
+curl "${REPOSITORY_ROOT}/i3-dotfiles/picom/picom.conf" -o ~/.config/picom/picom.conf
 
 curl "${REPOSITORY_ROOT}/i3-dotfiles/rofi/config.rasi" -o ~/.config/rofi/config.rasi
 curl "${REPOSITORY_ROOT}/i3-dotfiles/rofi/color.rasi" -o ~/.config/rofi/color.rasi
