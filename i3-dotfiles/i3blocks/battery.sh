@@ -1,7 +1,6 @@
 #!/bin/sh
 
-ACPI_RES=$(acpi -b)
-BAT_LEVEL=$(echo "$ACPI_RES" | grep -E -o "[0-9][0-9]?[0-9]?%" | grep -E -o "[0-9][0-9]?[0-9]")
+BAT_LEVEL=$(acpi -b | awk -F'[,][ ]' '{print $2}' | awk -F'[%]' '{print $1}')
 
 # Battery Symbol
 BAT_SYMBOL="\uf240"
