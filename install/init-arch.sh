@@ -70,6 +70,16 @@ case $DOCKER_A in
    * ) echo "skipped docker setting";;
 esac
 
+# Libvirt
+echo -n "do you use libvirtd? [Y/n]"
+read LIBVIRT_A
+case $LIBVIRT_A in
+    "" | [Yy]* )
+    sudo pacman -S libvirt qemu-full virt-manager dnsmasq dmidecode --needed
+    ;;
+   * ) echo "skipped to install libvirtd";;
+esac
+
 # Rust
 echo -n "do you want to get cargo(rustc)? [Y/n]"
 read RUSTC_A
