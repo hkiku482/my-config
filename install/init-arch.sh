@@ -27,7 +27,7 @@ case $AUR_A in
     cd ${TMP_DIR}/yay
     makepkg -sirc
     cd $PREV_DIR
-    yay -S google-chrome visual-studio-code-bin zoom otf-source-han-code-jp
+    yay -S google-chrome visual-studio-code-bin zoom otf-source-han-code-jp dropbox
     mkdir -p ~/.config/Code/User
     curl "${REPOSITORY_ROOT}/code/settings.json" -o ~/.config/Code/User/settings.json
     curl "${REPOSITORY_ROOT}/code/keybindings.json" -o ~/.config/Code/User/keybindings.json
