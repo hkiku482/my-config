@@ -5,7 +5,7 @@ TMP_DIR="/tmp/hkiku482-my-config"
 sudo pacman -Syu
 sudo pacman -S archlinux-keyring
 sudo pacman -S zsh git openssh base-devel --needed
-sudo pacman -S man nvtop noto-fonts-cjk noto-fonts-emoji fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
+sudo pacman -S man nvtop gnu-free-fonts noto-fonts-cjk noto-fonts-emoji fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
 sudo pacman -S cups wget zsh-autosuggestions zsh-syntax-highlighting --needed
 
 mkdir $TMP_DIR
