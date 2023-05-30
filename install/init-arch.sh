@@ -27,7 +27,7 @@ case $AUR_A in
     cd ${TMP_DIR}/yay
     makepkg -sirc
     cd $PREV_DIR
-    yay -S google-chrome visual-studio-code-bin zoom otf-source-han-code-jp
+    yay -S google-chrome visual-studio-code-bin zoom otf-source-han-code-jp dropbox
     mkdir -p ~/.config/Code/User
     curl "${REPOSITORY_ROOT}/code/settings.json" -o ~/.config/Code/User/settings.json
     curl "${REPOSITORY_ROOT}/code/keybindings.json" -o ~/.config/Code/User/keybindings.json
@@ -68,6 +68,16 @@ case $DOCKER_A in
     sudo gpasswd -a $USER docker
     ;;
    * ) echo "skipped docker setting";;
+esac
+
+# Libvirt
+echo -n "do you use libvirtd? [Y/n]"
+read LIBVIRT_A
+case $LIBVIRT_A in
+    "" | [Yy]* )
+    sudo pacman -S libvirt qemu-full virt-manager dnsmasq dmidecode --needed
+    ;;
+   * ) echo "skipped to install libvirtd";;
 esac
 
 # Rust
