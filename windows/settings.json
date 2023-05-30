@@ -1,0 +1,54 @@
+{
+    "editor.suggestSelection": "first",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.fontFamily": "'源ノ角ゴシック Code JP',Consolas, 'Courier New', monospace",
+    "editor.fontSize": 15,
+    "files.encoding": "utf8",
+    "emmet.variables": {
+        "lang": "ja"
+    },
+    "editor.renderWhitespace": "all",
+    "explorer.confirmDragAndDrop": false,
+    "git.ignoreMissingGitWarning": true,
+    "workbench.colorTheme": "Default Light+",
+    "explorer.confirmDelete": false,
+    "extensions.ignoreRecommendations": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editorAssociations": {
+        "*.DMP": "default"
+    },
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "",
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "u"
+            ],
+            "after": [],
+            "commands": [
+                "undo"
+            ]
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "after": [],
+            "commands": [
+                "redo"
+            ]
+        }
+    ],
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "explorer.compactFolders": false,
+    "window.zoomLevel": -2,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.formatOnSave": true,
+    "workbench.iconTheme": "material-icon-theme",
+}
