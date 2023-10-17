@@ -24,6 +24,7 @@ set $ws10 "10"
 
 # Execute autostart applications
 exec --no-startup-id xrandr -r 60
+exec --no-startup-id xset r rate 250 40
 exec --no-startup-id nm-applet
 exec --no-startup-id conky
 exec --no-startup-id udiskie
