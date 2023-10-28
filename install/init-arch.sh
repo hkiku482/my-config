@@ -64,7 +64,7 @@ echo -n "do you want to set up docker? [Y/n]"
 read DOCKER_A
 case $DOCKER_A in
     "" | [Yy]* )
-    sudo pacman -S docker docker-compose --needed
+    sudo pacman -S docker docker-buildx docker-compose --needed
     sudo gpasswd -a $USER docker
     ;;
    * ) echo "skipped docker setting";;
