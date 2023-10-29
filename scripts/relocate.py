@@ -11,7 +11,7 @@ Options
   info - Display specified window info without relocate.
   apps - Display all apps and windows titles.
   conf - Print example config file.
-          Run this to use it. 'python3 relocation.py conf > relocate-conf.json'""")
+          Run this to use it. 'python3 relocate.py conf > relocate-conf.json'""")
 
 def printConf():
   print("""{
@@ -92,8 +92,7 @@ def main():
 
   targetAppTitles = pwc.getAllAppsWindowsTitles()[appName]
 
-  # Check app, title
-
+  # Check conf
   if (len(targetAppTitles) < 1):
     print(f"app has no title", file=sys.stderr)
     printApps()
@@ -107,7 +106,6 @@ def main():
       printApps()
       raise
 
-  # Move window to location
   targetWindow = pwc.getWindowsWithTitle(title=title)
   if (len(targetWindow) == 0):
     print(f"title not found: {title}", file=sys.stderr)
