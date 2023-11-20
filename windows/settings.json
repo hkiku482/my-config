@@ -6,7 +6,7 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "editor.fontFamily": "'源ノ角ゴシック Code JP', 'CaskaydiaCove Nerd Font'",
+  "editor.fontFamily": "'源ノ角ゴシック Code JP R', 'CaskaydiaCove Nerd Font', 'Source Code Pro for Powerline'",
   "files.encoding": "utf8",
   "emmet.variables": {
     "lang": "ja"
@@ -17,7 +17,6 @@
   "workbench.colorTheme": "Default Light+",
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
-  "security.workspace.trust.untrustedFiles": "open",
   "workbench.editorAssociations": {
     "*.DMP": "default"
   },
@@ -25,27 +24,11 @@
   "vim.vimrc.path": "~/.vimrc",
   "vim.hlsearch": true,
   "vim.useSystemClipboard": true,
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["u"],
-      "after": [],
-      "commands": ["undo"]
-    },
-    {
-      "before": ["<C-r>"],
-      "after": [],
-      "commands": ["redo"]
-    }
-  ],
   "editor.unicodeHighlight.nonBasicASCII": false,
   "explorer.compactFolders": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.formatOnSave": true,
   "workbench.iconTheme": "material-icon-theme",
-  "remote.SSH.remotePlatform": {
-    "zephyrus": "linux",
-    "server": "linux"
-  },
   "window.zoomLevel": -1,
   "editor.tabSize": 2,
   "emmet.optimizeStylesheetParsing": false,
