@@ -1,0 +1,48 @@
+[colors.bright]
+black = "0x737373"
+blue = "0x66B3FF"
+cyan = "0x96FDFF"
+green = "0xA1FFA4"
+magenta = "0xFF6EB2"
+red = "0xFF8282"
+white = "0xF2F2F2"
+yellow = "0xFFFF82"
+
+[colors.cursor]
+cursor = "0xEBFFFF"
+text = "0x202020"
+
+[colors.normal]
+black = "0x0d0d0d"
+blue = "0x0080FF"
+cyan = "0x2EEDEF"
+green = "0x36EC3C"
+magenta = "0xE70781"
+red = "0xFE1C1C"
+white = "0xBFBFBF"
+yellow = "0xFEFE1C"
+
+[colors.primary]
+background = "0x202020"
+foreground = "0xEBEBEB"
+
+[font]
+size = 7.5
+
+[font.bold]
+family = "Source Code Pro"
+style = "Bold"
+
+[font.bold_italic]
+family = "Source Code Pro"
+style = "Bold Italic"
+
+[font.italic]
+family = "Source Code Pro"
+style = "Italic"
+
+[font.normal]
+family = "Source Code Pro"
+
+[window]
+opacity = 0.8
