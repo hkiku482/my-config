@@ -18,7 +18,7 @@ mkdir -p ~/.config/picom
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/conky
 
-curl "${REPOSITORY_ROOT}/i3-dotfiles/alacritty/alacritty.yml" -o ~/.config/alacritty/alacritty.yml
+curl "${REPOSITORY_ROOT}/i3-dotfiles/alacritty/alacritty.toml" -o ~/.config/alacritty/alacritty.toml
 
 curl "${REPOSITORY_ROOT}/i3-dotfiles/i3/config" -o ~/.config/i3/config
 curl "${REPOSITORY_ROOT}/i3-dotfiles/i3/appearance.conf" -o ~/.config/i3/appearance.conf
