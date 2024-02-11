@@ -1,7 +1,6 @@
 REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main"
 
 sudo pacman -S xorg-server xorg-xinit xautolock --needed
-sudo gpasswd -a $USER video
 
 sudo pacman -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan --needed
 
