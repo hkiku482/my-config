@@ -151,8 +151,8 @@ bindsym $mod+d exec --no-startup-id "rofi -show drun -theme ~/.config/rofi/confi
 # bindsym $mod+d exec --no-startup-id dmenu_run
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 10"
-bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 10"
+bindsym XF86MonBrightnessUp exec --no-startup-id "brightnessctl -q s 10%+"
+bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl -q s 10%-"
 
 # Keyboard illumination
 bindsym XF86KbdBrightnessUp exec --no-startup-id "light -A 50 -s sysfs/leds/asus::kbd_backlight"
