@@ -1,0 +1,31 @@
+{
+  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.iconTheme": "material-icon-theme",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+  "editor.fontFamily": "'源ノ角ゴシック Code JP', 'CaskaydiaCove Nerd Font Propo', 'Source Code Pro'",
+  "editor.suggestSelection": "first",
+  "editor.renderWhitespace": "all",
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.formatOnSave": true,
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "~/.vimrc",
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "git.ignoreMissingGitWarning": true,
+  "git.openRepositoryInParentFolders": "always",
+  "files.encoding": "utf8",
+  "extensions.ignoreRecommendations": true,
+  "window.zoomLevel": -2,
+  "emmet.optimizeStylesheetParsing": false,
+  "emmet.showAbbreviationSuggestions": false,
+  "emmet.showExpandedAbbreviation": "never",
+  "emmet.variables": {
+    "lang": "ja"
+  },
+  "[python]": {
+    "editor.tabSize": 4,
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always"
+}
