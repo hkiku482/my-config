@@ -4,7 +4,14 @@ TMP_DIR="/tmp/hkiku482-my-config"
 
 sudo pacman -Syu
 sudo pacman -S archlinux-keyring
-sudo pacman -S zsh git openssh base-devel --needed
+sudo pacman -S zsh git openssh base-devel pacman-contrib --needed
+
+sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+curl "https://archlinux.org/mirrorlist/?country=JP" -o ${TMP_DIR}/mirrorlist
+sed -i "s/^#Server/Server/" ${TMP_DIR}/mirrorlist
+rankmirrors ${TMP_DIR}/mirrorlist > ${TMP_DIR}/rankmirrorlist
+sudo cp ${TMP_DIR}/rankmirrorlist /etc/pacman.d/mirrorlist
+
 sudo pacman -S man nvtop gnu-free-fonts noto-fonts-cjk noto-fonts-emoji fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
 sudo pacman -S cups wget zsh-autosuggestions zsh-syntax-highlighting --needed
 
