@@ -1,8 +1,10 @@
 REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main"
 
-sudo pacman -S texlive texlive-lang biber --needed
+mkdir -p /tmp/texlinstall
+curl https://ftp.jaist.ac.jp/pub/CTAN/systems/texlive/tlnet/install-tl-unx.tar.gz -o /tmp/texinstall/install-tl-unx.tar.gz
+tar xvf install-tl-unx.tar.gz -C /tmp/texinstall
+sudo $(ls /tmp/texinstall/install-tl-2*/install-tl)
 
-# NOTE: `latexindent` was broken
 sudo cpan Log::Log4perl
 sudo cpan Log::Dispatch
 sudo cpan YAML::Tiny
