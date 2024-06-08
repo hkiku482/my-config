@@ -21,7 +21,13 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-vnoremap p "0p
+" Register
+nnoremap s "_s
+nnoremap x "_x
+vnoremap s "_s
+vnoremap x "_x
+
+vnoremap <silent> p "0p
 
 syntax enable
 set list listchars=tab:\→\ ,space:\･
