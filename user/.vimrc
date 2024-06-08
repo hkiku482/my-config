@@ -21,12 +21,7 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-nnoremap p "*p
-nnoremap P "*P
-vnoremap p "*p
-vnoremap P "*P
-vnoremap d "*d
-vnoremap D "*D
+vnoremap p "0p
 
 syntax enable
 set list listchars=tab:\→\ ,space:\･
