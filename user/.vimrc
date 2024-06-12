@@ -27,7 +27,7 @@ nnoremap x "_x
 vnoremap s "_s
 vnoremap x "_x
 
-vnoremap <silent> p "0p
+vnoremap <silent> p pgvy
 
 syntax enable
 set list listchars=tab:\→\ ,space:\･

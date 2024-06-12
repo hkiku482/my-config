@@ -13,6 +13,37 @@
   "vim.vimrc.path": "~/.vimrc",
   "vim.hlsearch": true,
   "vim.useSystemClipboard": true,
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "p"
+      ],
+      "after": [
+        "p",
+        "g",
+        "v",
+        "y"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "u"
+      ],
+      "commands": [
+        "undo"
+      ]
+    },
+    {
+      "before": [
+        "<C-r>"
+      ],
+      "commands": [
+        "redo"
+      ]
+    }
+  ],
   "git.ignoreMissingGitWarning": true,
   "git.openRepositoryInParentFolders": "always",
   "files.encoding": "utf8",
