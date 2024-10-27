@@ -56,7 +56,7 @@
     "lang": "ja"
   },
   "[python]": {
-    "editor.tabSize": 4,
+    "editor.tabSize": 4
   },
   "typescript.updateImportsOnFileMove.enabled": "always"
 }

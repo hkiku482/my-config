@@ -1,0 +1,29 @@
+{
+    "React Component Template": {
+        "scope": "typescriptreact",
+        "prefix": "tsx_component",
+        "body": [
+            "export type ${1:Component}Props = {};",
+            "export const ${1:Component} = ({}: ${1:Component}Props) => {",
+            "  return <>$0</>;",
+            "};"
+        ],
+        "description": "React functional component with TypeScript props"
+    },
+    "Storybook Template": {
+        "scope": "typescriptreact",
+        "prefix": "tsx_story",
+        "body": [
+            "import { StoryObj, Meta } from '@storybook/react';",
+            "",
+            "const meta: Meta<typeof ${1:Component}> = {};",
+            "",
+            "type Story = StoryObj<typeof meta>;",
+            "",
+            "export default meta;",
+            "",
+            "export const Default: Story = {};",
+        ],
+        "description": "Storybook template for a component"
+    }
+}
