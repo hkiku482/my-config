@@ -10,6 +10,7 @@
   "[bibtex]": {
     "editor.tabSize": 2
   },
+  "latex-workshop.formatting.latex": "latexindent",
   "latex-workshop.intellisense.package.enabled": true,
   "latex-workshop.latex.outDir": "build",
   "latex-workshop.latex.autoClean.run": "onBuilt",
