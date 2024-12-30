@@ -87,25 +87,6 @@ case $LIBVIRT_A in
    * ) echo "skipped to install libvirtd";;
 esac
 
-# Rust
-echo -n "do you want to get cargo(rustc)? [Y/n]"
-read RUSTC_A
-case $RUSTC_A in
-    "" | [Yy]* )
-    sudo pacman -S rustup --needed
-    rustup default stable
-    ;;
-    * ) echo "skipped installing cargo" ;;
-esac
-
-# Golang
-echo -n "do you want to get golang? [Y/n]"
-read GO_A
-case $GO_A in
-    "" | [Yy]* ) sudo pacman -S go --needed ;;
-    * ) echo "skipped installing golang" ;;
-esac
-
 # Python
 echo -n "do you want to get python? [Y/n]"
 read PY_A
