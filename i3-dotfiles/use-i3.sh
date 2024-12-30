@@ -39,3 +39,6 @@ sudo curl "${REPOSITORY_ROOT}/xorg/30-touchpad.conf" -o /etc/X11/xorg.conf.d/30-
 
 git clone https://github.com/hkiku482/simple-conky.git ~/.config/conky
 rm -rf ~/.config/conky/.git
+
+sudo sed -i 's/#greeter-session=.*/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
+sudo sed -i 's/antergos/litarvan/' /etc/lightdm/lightdm-webkit2-greeter.conf
