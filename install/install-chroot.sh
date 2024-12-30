@@ -9,8 +9,8 @@ echo "KEYMAP=jp106" >> /etc/vconsole.conf
 echo $HOSTNAME >> /etc/hostname
 unset HOSTNAME
 
-echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen
+sed -i 's/#en_US.UTF-8/en_US.UTF-8' /etc/locale.gen
+sed -i 's/#ja_JP.UTF-8/ja_JP.UTF-8' /etc/locale.gen
 locale-gen
 
 pacman -Syu
