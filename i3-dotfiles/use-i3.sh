@@ -1,14 +1,13 @@
 REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main"
 
-sudo pacman -S xorg-server xorg-xinit xautolock brightnessctl xf86-input-synaptics xorg-xbacklight xorg-xrandr --needed
-sudo pacman -S acpi pavucontrol pulseaudio pamixer --needed
+sudo pacman -S --noconfirm --needed xorg-server xorg-xinit xf86-input-synaptics xorg-xrandr xorg-xbacklight xautolock
+sudo pacman -S --noconfirm --needed brightnessctl acpi pavucontrol pulseaudio pamixer
+sudo pacman -S --noconfirm --needed lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan
+sudo pacman -S --noconfirm --needed i3-wm rofi i3blocks xss-lock feh picom conky
+sudo pacman -S --noconfirm --needed network-manager-applet gnu-free-fonts noto-fonts-cjk noto-fonts-emoji ttf-roboto-mono ttf-dejavu awesome-terminal-fonts fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im
+sudo pacman -S --noconfirm --needed thunar alacritty tumbler gvfs gvfs-smb udiskie dunst archlinux-wallpaper
 
-sudo pacman -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan --needed
-sudo pacman -S i3-wm rofi i3blocks xss-lock feh picom network-manager-applet --needed
-sudo pacman -S thunar tumbler gvfs gvfs-smb udiskie dunst ttf-roboto-mono ttf-dejavu awesome-terminal-fonts --needed
 yay -S i3lock-color --needed
-
-sudo pacman -S archlinux-wallpaper alacritty bpytop neofetch conky --needed
 
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/rofi

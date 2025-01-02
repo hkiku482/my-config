@@ -12,7 +12,7 @@ sed -i "s/^#Server/Server/" ${TMP_DIR}/mirrorlist
 rankmirrors ${TMP_DIR}/mirrorlist > ${TMP_DIR}/rankmirrorlist
 sudo cp ${TMP_DIR}/rankmirrorlist /etc/pacman.d/mirrorlist
 
-sudo pacman -S man nvtop gnu-free-fonts noto-fonts-cjk noto-fonts-emoji fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im --needed
+sudo pacman -S man nvtop btop neofetch tree --needed
 sudo pacman -S cups wget zsh-autosuggestions zsh-syntax-highlighting --needed
 
 mkdir $TMP_DIR
