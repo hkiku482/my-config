@@ -1,11 +1,11 @@
 REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main"
 
-sudo pacman -S xorg-server xorg-xinit xautolock --needed
+sudo pacman -S xorg-server xorg-xinit xautolock brightnessctl xf86-input-synaptics xorg-xbacklight xorg-xrandr --needed
+sudo pacman -S acpi pavucontrol pulseaudio pamixer --needed
 
 sudo pacman -S lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan --needed
-
 sudo pacman -S i3-wm rofi i3blocks xss-lock feh picom network-manager-applet --needed
-sudo pacman -S xorg-xbacklight acpi pavucontrol pulseaudio pamixer thunar tumbler gvfs gvfs-smb udiskie dunst ttf-roboto-mono ttf-dejavu awesome-terminal-fonts brightnessctl --needed
+sudo pacman -S thunar tumbler gvfs gvfs-smb udiskie dunst ttf-roboto-mono ttf-dejavu awesome-terminal-fonts --needed
 yay -S i3lock-color --needed
 
 sudo pacman -S archlinux-wallpaper alacritty bpytop neofetch conky --needed
