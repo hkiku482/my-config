@@ -17,13 +17,6 @@ sudo pacman -S cups wget zsh-autosuggestions zsh-syntax-highlighting --needed
 
 mkdir $TMP_DIR
 
-sudo tee -a /etc/environment <<EOT > /dev/null
-GTK_IM_MODULE=fcitx5
-QT_IM_MODULE=fcitx5
-XMODIFIERS=@im=fcitx5
-DefaultIMModule=fcitx5
-EOT
-
 # AUR
 echo -n "do you want to use aur(yay)? [Y/n]"
 read AUR_A
@@ -34,10 +27,6 @@ case $AUR_A in
     cd ${TMP_DIR}/yay
     makepkg -sirc
     cd $PREV_DIR
-    yay -S google-chrome visual-studio-code-bin zoom otf-source-han-code-jp dropbox
-    mkdir -p ~/.config/Code/User
-    curl "${REPOSITORY_ROOT}/code/settings.json" -o ~/.config/Code/User/settings.json
-    curl "${REPOSITORY_ROOT}/code/keybindings.json" -o ~/.config/Code/User/keybindings.json
     ;;
     * ) echo "skipped" ;;
 esac
@@ -53,6 +42,7 @@ case $GITHUB_A in
     read GITEMAIL
     git config --global user.name $GITNAME
     git config --global user.email $GITEMAIL
+    git config --global init.defaultBranch main
     if [ ! -e ~/.ssh/github ]; then
         ssh-keygen -f ~/.ssh/github -t ed25519 -N ""
     fi
@@ -87,22 +77,19 @@ case $LIBVIRT_A in
    * ) echo "skipped to install libvirtd";;
 esac
 
-# Python
-echo -n "do you want to get python? [Y/n]"
-read PY_A
-case $PY_A in
-    "" | [Yy]* ) sudo pacman -S python python-pip --needed ;;
-    * ) echo "skipped installing python" ;;
-esac
-
 # Desktop
-echo -n "do you want to use i3wm? [Y/n]"
+echo -n "do you want to use desktop? [i3/cinnamon/N]"
 read WM_A
 case $WM_A in
-    "" | [Yy]* )
-    curl "${REPOSITORY_ROOT}/i3-dotfiles/use-i3.sh" -o ${TMP_DIR}/i3.sh
+    "i3" )
+    curl "${REPOSITORY_ROOT}/desktop/i3-dotfiles/use-i3.sh" -o ${TMP_DIR}/i3.sh
     chmod 744 ${TMP_DIR}/i3.sh
     ${TMP_DIR}/i3.sh
+    ;;
+    "cinnamon" )
+    curl "${REPOSITORY_ROOT}/desktop/cinnamon-dotfiles/use-cinnamon.sh" -o ${TMP_DIR}/cinnamon.sh
+    chmod 744 ${TMP_DIR}/cinnamon.sh
+    ${TMP_DIR}/cinnamon.sh
     ;;
     * ) echo "skipped installing i3wm" ;;
 esac
