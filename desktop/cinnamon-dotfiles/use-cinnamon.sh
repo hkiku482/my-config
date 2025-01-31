@@ -1,7 +1,7 @@
 REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main"
 
 sudo pacman -S --noconfirm --needed xorg-server
-sudo pacman -S --noconfirm --needed lightdm lightdm-webkit2-greeter lightdm-webkit-litarvan
+sudo pacman -S --noconfirm --needed lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan
 sudo pacman -S --noconfirm --needed cinnamon materia-gtk-theme cosmic-icon-theme
 sudo pacman -S --noconfirm --needed firefox alacritty gnu-free-fonts noto-fonts-cjk noto-fonts-emoji ttf-roboto-mono ttf-dejavu awesome-terminal-fonts fcitx5 fcitx5-mozc fcitx5-configtool fcitx5-im
 
