@@ -58,5 +58,6 @@
   "[python]": {
     "editor.tabSize": 4
   },
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.activityBar.orientation": "vertical"
 }
