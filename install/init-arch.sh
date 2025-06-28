@@ -6,6 +6,8 @@ sudo pacman -Syu
 sudo pacman -S archlinux-keyring
 sudo pacman -S zsh git openssh base-devel pacman-contrib --needed
 
+mkdir $TMP_DIR
+
 sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 curl "https://archlinux.org/mirrorlist/?country=JP" -o ${TMP_DIR}/mirrorlist
 sed -i "s/^#Server/Server/" ${TMP_DIR}/mirrorlist
@@ -14,8 +16,6 @@ sudo cp ${TMP_DIR}/rankmirrorlist /etc/pacman.d/mirrorlist
 
 sudo pacman -S man nvtop btop neofetch tree --needed
 sudo pacman -S cups wget zsh-autosuggestions zsh-syntax-highlighting --needed
-
-mkdir $TMP_DIR
 
 # AUR
 echo -n "do you want to use aur(yay)? [Y/n]"
