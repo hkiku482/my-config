@@ -1,6 +1,6 @@
 REPOSITORY_ROOT="https://raw.githubusercontent.com/hkiku482/my-config/main"
 
-mkdir -p /tmp/texlinstall
+mkdir -p /tmp/texinstall
 curl https://ftp.jaist.ac.jp/pub/CTAN/systems/texlive/tlnet/install-tl-unx.tar.gz -o /tmp/texinstall/install-tl-unx.tar.gz
 tar xvf install-tl-unx.tar.gz -C /tmp/texinstall
 sudo $(ls /tmp/texinstall/install-tl-2*/install-tl)
