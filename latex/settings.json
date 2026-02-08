@@ -12,13 +12,6 @@
   "latex-workshop.latex.clean.subfolder.enabled": true,
   "latex-workshop.latex.recipes": [
     {
-      "name": "latexmk (platex)",
-      "tools": [
-        "platex",
-        "dvipdfmx"
-      ]
-    },
-    {
       "name": "latexmk",
       "tools": [
         "latexmk"
@@ -30,26 +23,8 @@
       "name": "latexmk",
       "command": "latexmk",
       "args": [
-        "-pdfdvi",
         "-outdir=%OUTDIR%",
         "%DOC%"
-      ]
-    },
-    {
-      "name": "platex",
-      "command": "platex",
-      "args": [
-        "-output-directory=%OUTDIR%",
-        "%DOC%"
-      ]
-    },
-    {
-      "name": "dvipdfmx",
-      "command": "dvipdfmx",
-      "args": [
-        "-o",
-        "%OUTDIR%/%DOCFILE%.pdf",
-        "%OUTDIR%/%DOCFILE%.dvi"
       ]
     }
   ]
